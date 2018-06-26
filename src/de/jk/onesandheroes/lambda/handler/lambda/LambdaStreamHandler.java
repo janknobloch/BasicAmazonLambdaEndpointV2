@@ -11,16 +11,17 @@ import de.jk.onesandheroes.lambda.handler.awsdefault.HelpIntentHandler;
 import de.jk.onesandheroes.lambda.handler.awsdefault.LaunchRequestHandler;
 import de.jk.onesandheroes.lambda.handler.awsdefault.SessionEndedRequestHandler;
 
- public class LambdaStreamHandler extends SkillStreamHandler {
- 
-     private static Skill getSkill() {
-         return Skills.standard()
-                 .addRequestHandlers(new CancelandStopIntentHandler(), new HelloWorldIntentHandler(), new HelpIntentHandler(), new LaunchRequestHandler(), new SessionEndedRequestHandler())
-                 .build();
-     }
- 
-     public LambdaStreamHandler() {
-         super(getSkill());
-     }
- 
- }
+public class LambdaStreamHandler extends SkillStreamHandler {
+
+	private static Skill getSkill() {
+		return Skills.standard()
+				.addRequestHandlers(new CancelandStopIntentHandler(), new HelloWorldIntentHandler(),
+						new HelpIntentHandler(), new LaunchRequestHandler(), new SessionEndedRequestHandler())
+				.withSkillId("").build();
+	}
+
+	public LambdaStreamHandler() {
+		super(getSkill());
+	}
+
+}
